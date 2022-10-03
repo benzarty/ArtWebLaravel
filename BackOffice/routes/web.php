@@ -14,7 +14,7 @@ use App\Http\Controllers\EventController;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
+// Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
 //CRUD operations velo
 Route::post("AddVelo", [VeloController::class,'AddVelo']);
 Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
@@ -26,4 +26,5 @@ Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
 //Route::get("getAllEvents", [EventController::class,'getAllEvents']);
 //Route::delete("destroyEvent/{id}",[EventController::class,'destroyEvent']);
 Route::resource('events',EventController::class);
+
 
