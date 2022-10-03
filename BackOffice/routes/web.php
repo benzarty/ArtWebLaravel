@@ -31,7 +31,7 @@ Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
 //Route::put("EditEvent/{id}", [EventController::class,'EditEvent']);
 //Route::get("getAllEvents", [EventController::class,'getAllEvents']);
 //Route::delete("destroyEvent/{id}",[EventController::class,'destroyEvent']);
-Route::resource('events',EventController::class);
+Route::resource('event',EventController::class);
 Route::resource('velos',VeloController::class);
 Route::resource('bloc',BlocController::class);
 
