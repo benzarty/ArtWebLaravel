@@ -6,49 +6,103 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Velo;
 class VeloController extends Controller
-{
-    public function AddVelo(Request $request)
+{ public function index()
     {
-        $velo = new Velo();
-        $velo->type = $request->input('type');
-        $velo->marque =$request->input('marque');
-        $velo->description = $request->input('description');
-        $velo->image = $request->input('image');
-        $velo->couleur =$request->input('couleur');
-        $velo->tarif =$request->input('tarif');
-        $velo->save();
-        return response()->json([
-            'velo' => $velo,
-            'success' => true
-        ], 200);
-    }
-    public function EditVelo(Request $request, $id)
-    {
-        $velo = Velo::findOrFail($id);
-        $velo->type = $request->input('type');
-        $velo->marque =$request->input('marque');
-        $velo->description = $request->input('description');
-        $velo->couleur =$request->input('couleur');
-        $velo->tarif =$request->input('tarif');
-        $velo->save();
+        $velos = Velo::latest()->paginate(5);
 
-        return response()->json([
-            'velo' => $velo,
-            'success' => true
-        ], 200);
+        return view('velos.index',compact('velos'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-    public function getAllVelos()
-    { $velos =Velo::latest()->get();
-      return response()->json($velos);
-    }
-    public function destroyVelo($id)
-    {
-       $velo= Velo::findOrFail($id);
-       $velo->delete();
-       return response()->json([
 
-        'success' => true
-    ], 200);
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('velos.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'type' => 'required',
+            'marque' => 'required',
+            'couleur' => 'required',
+            'description' => 'required',
+            'tarif' => 'required',
+
+        ]);
+
+        Velo::create($request->all());
+
+        return redirect()->route('velos.index')
+                        ->with('success','velo created successfully.');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Velo  $velo
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Velo $velo)
+    {
+        return view('velos.show',compact('velo'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Velo  $velo
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Velo $velo)
+    {
+        return view('velos.edit',compact('velo'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Velo  $velo
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Velo $velo)
+    {
+        $request->validate([
+            'type' => 'required',
+            'marque' => 'required',
+            'couleur' => 'required',
+            'description' => 'required',
+            'tarif' => 'required',
+        ]);
+
+        $velo->update($request->all());
+
+        return redirect()->route('velos.index')
+                        ->with('success','velo updated successfully');
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\V  $velo
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Velo $velo)
+    {
+        $velo->delete();
+
+        return redirect()->route('velos.index')
+                        ->with('success','velo deleted successfully');
     }
 
 

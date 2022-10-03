@@ -14,11 +14,11 @@ use App\Http\Controllers\VeloController;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
+// Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
 //CRUD operations velo
-Route::post("AddVelo", [VeloController::class,'AddVelo']);
-Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
-Route::get("AllVelo", [VeloController::class,'getAllVelos']);
-Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
-
+// Route::post("AddVelo", [VeloController::class,'AddVelo']);
+// Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
+// Route::get("AllVelo", [VeloController::class,'getAllVelos']);
+// Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
+Route::resource('velos',VeloController::class);
 
