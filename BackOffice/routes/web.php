@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VeloController;
 
+use App\Http\Controllers\AssociationController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +25,5 @@ Route::get("AllVelo", [VeloController::class,'getAllVelos']);
 Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
 
 
+
+Route::resource("/association",AssociationController::class);

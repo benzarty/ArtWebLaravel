@@ -11,27 +11,27 @@
     <meta name="description" content="Empire Bootstrap admin template made using Bootstrap 4, it has tons of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
     <meta name="keywords" content="Empire, bootstrap admin template, bootstrap admin panel, bootstrap 4 admin template, admin template">
     <meta name="author" content="Srthemesvilla" />
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/img/favicon.ico') }}">
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
     <!-- Icon fonts -->
-    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.css">
-    <link rel="stylesheet" href="assets/fonts/linearicons.css">
-    <link rel="stylesheet" href="assets/fonts/open-iconic.css">
-    <link rel="stylesheet" href="assets/fonts/pe-icon-7-stroke.css">
-    <link rel="stylesheet" href="assets/fonts/feather.css">
+    <link rel="stylesheet" href="{{ URL::asset('assets/fonts/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/fonts/ionicons.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/fonts/linearicons.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/fonts/open-iconic.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/fonts/pe-icon-7-stroke.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/fonts/feather.css') }}">
 
     <!-- Core stylesheets -->
-    <link rel="stylesheet" href="assets/css/bootstrap-material.css">
-    <link rel="stylesheet" href="assets/css/shreerang-material.css">
-    <link rel="stylesheet" href="assets/css/uikit.css">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap-material.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/shreerang-material.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/uikit.css') }}">
 
     <!-- Libs -->
-    <link rel="stylesheet" href="assets/libs/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="assets/libs/flot/flot.css">
+    <link rel="stylesheet" href="{{ URL::asset('assets/libs/perfect-scrollbar/perfect-scrollbar.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/libs/flot/flot.css') }}">
 
 </head>
 
@@ -314,7 +314,7 @@
                                     </div>
                                     <div class="list-group list-group-flush">
                                         <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                                            <img src="assets/img/avatars/6-small.png" class="d-block ui-w-40 rounded-circle" alt>
+                                            <img src="{ URL::asset('assets/img/avatars/6-small.png') }}" class="d-block ui-w-40 rounded-circle" alt>
                                             <div class="media-body ml-3">
                                                 <div class="text-dark line-height-condenced">Lorem ipsum dolor consectetuer elit.</div>
                                                 <div class="text-light small mt-1">
@@ -324,7 +324,7 @@
                                         </a>
 
                                         <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                                            <img src="assets/img/avatars/4-small.png" class="d-block ui-w-40 rounded-circle" alt>
+                                            <img src="{ URL::asset('assets/img/avatars/4-small.png') }}" class="d-block ui-w-40 rounded-circle" alt>
                                             <div class="media-body ml-3">
                                                 <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet, consectetuer.</div>
                                                 <div class="text-light small mt-1">
@@ -334,7 +334,7 @@
                                         </a>
 
                                         <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                                            <img src="assets/img/avatars/5-small.png" class="d-block ui-w-40 rounded-circle" alt>
+                                            <img src="{ URL::asset('assets/img/avatars/5-small.png') }}" class="d-block ui-w-40 rounded-circle" alt>
                                             <div class="media-body ml-3">
                                                 <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet elit.</div>
                                                 <div class="text-light small mt-1">
@@ -344,7 +344,7 @@
                                         </a>
 
                                         <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                                            <img src="assets/img/avatars/11-small.png" class="d-block ui-w-40 rounded-circle" alt>
+                                            <img src="{ URL::asset('assets/img/avatars/11-small.png') }}" class="d-block ui-w-40 rounded-circle" alt>
                                             <div class="media-body ml-3">
                                                 <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet consectetuer amet elit dolor sit.</div>
                                                 <div class="text-light small mt-1">
@@ -363,7 +363,7 @@
                             <div class="demo-navbar-user nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                                     <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
-                                        <img src="assets/img/avatars/1.png" alt class="d-block ui-w-30 rounded-circle">
+                                        <img src="{ URL::asset('assets/img/avatars/1.png') }}" alt class="d-block ui-w-30 rounded-circle">
                                         <span class="px-1 mr-lg-2 ml-2 ml-lg-0">Cindy Deitch</span>
                                     </span>
                                 </a>
@@ -404,26 +404,26 @@
     <!-- [ Layout wrapper] End -->
 
     <!-- Core scripts -->
-    <script src="assets/js/pace.js"></script>
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/libs/popper/popper.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/sidenav.js"></script>
-    <script src="assets/js/layout-helpers.js"></script>
-    <script src="assets/js/material-ripple.js"></script>
+    <script src="{{ URL::asset('assets/js/pace.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/popper/popper.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/sidenav.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/layout-helpers.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/material-ripple.js') }}"></script>
 
     <!-- Libs -->
-    <script src="assets/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="assets/libs/eve/eve.js"></script>
-    <script src="assets/libs/flot/flot.js"></script>
-    <script src="assets/libs/flot/curvedLines.js"></script>
-    <script src="assets/libs/chart-am4/core.js"></script>
-    <script src="assets/libs/chart-am4/charts.js"></script>
-    <script src="assets/libs/chart-am4/animated.js"></script>
+    <script src="{{ URL::asset('assets/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/eve/eve.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/flot/flot.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/flot/curvedLines.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/chart-am4/core.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/chart-am4/charts.js') }}"></script>
+    <script src="{{ URL::asset('assets/libs/chart-am4/animated.js') }}"></script>
 
     <!-- Demo -->
-    <script src="assets/js/demo.js"></script><script src="assets/js/analytics.js"></script>
-    <script src="assets/js/pages/dashboards_index.js"></script>
+    <script src="{{ URL::asset('assets/js/demo.js') }}"></script><script src="{{ URL::asset('assets/js/analytics.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/pages/dashboards_index.js') }}"></script>
 </body>
 
 </html>
