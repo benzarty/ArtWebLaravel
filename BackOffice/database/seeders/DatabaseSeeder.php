@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        // \App\Models\User::factory(10)->create();
+    {    $this->call(VeloSeeder::class);
+        \App\Models\Velo::factory(1)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

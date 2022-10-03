@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VeloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
+//CRUD operations velo
+Route::post("AddVelo", [VeloController::class,'AddVelo']);
+Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
+Route::get("AllVelo", [VeloController::class,'getAllVelos']);
+Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
+
 
