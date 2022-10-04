@@ -7,57 +7,50 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Event;
 class EventController extends Controller
-{
-    public function AddEvent(Request $request)
+{   public function index()
     {
-        $event = new Event();
-        $event->place = $request->input('place');
-        $event->nameevent =$request->input('nameevent');
-        $event->dateajout = $request->input('dateajout');
-        $event->datefin = $request->input('datefin');
        
-        $event->velo_id =$request->input('velo_id');
-        $event->save();
-        return response()->json([
-            'event' => $event,
-            'success' => true
-        ], 200);
+    
+        $event = Event::all();
+        return view ('event.index')->with('event', $event);
     }
-    public function EditEvent(Request $request, $id)
+    
+    public function create()
     {
-        $event = Event::findOrFail($id);
-        $event->place = $request->input('place');
-        $event->nameevent =$request->input('nameevent');
-        $event->dateajout = $request->input('dateajout');
-        $event->datefin =$request->input('datefin');
-        $event->velo_id =$request->input('velo_id');
-        $event->save();
-
-        return response()->json([
-            'event' => $event,
-            'success' => true
-        ], 200);
+        return view('event.create');
     }
-   /* public function getAllEvents()
-    { $events =Event::latest()->get();
-      //return response()->json($events);
-      return view('eventsliste' , compact('events'));
-    }*/
-    public function index()
+  
+    public function store(Request $request)
     {
-        $events = Event::latest()->paginate(5);
-
-        return view('events.eventsliste',compact('events'));
-          
+        $input = $request->all();
+        Event::create($input);
+        return redirect('event')->with('flash_message', 'event Addedd!');  
     }
-    public function destroyEvent($id)
+    
+    public function show($id)
     {
-       $event= Event::findOrFail($id);
-       $event->delete();
-       return response()->json([
-
-        'success' => true
-    ], 200);
+        $event = Event::find($id);
+        return view('event.show')->with('event', $event);
+    }
+    
+    public function edit($id)
+    {
+        $event = Event::find($id);
+        return view('event.edit')->with('event', $event);
+    }
+  
+    public function update(Request $request, $id)
+    {
+        $event = Event::find($id);
+        $input = $request->all();
+        $event->update($input);
+        return redirect('event')->with('flash_message', 'event Updated!');  
+    }
+  
+    public function destroy($id)
+    {
+        Event::destroy($id);
+        return redirect('event')->with('flash_message', 'Event deleted!');  
+    }
     }
 
-}
