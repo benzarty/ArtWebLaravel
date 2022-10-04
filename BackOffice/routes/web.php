@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VeloController;
+use App\Http\Controllers\BlocController;
 use App\Http\Controllers\EventController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,7 @@ use App\Http\Controllers\EventController;
 
 // Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
 //CRUD operations velo
+
 Route::post("AddVelo", [VeloController::class,'AddVelo']);
 Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
 Route::get("AllVelo", [VeloController::class,'getAllVelos']);
@@ -26,5 +29,6 @@ Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
 //Route::get("getAllEvents", [EventController::class,'getAllEvents']);
 //Route::delete("destroyEvent/{id}",[EventController::class,'destroyEvent']);
 Route::resource('events',EventController::class);
-
+Route::resource('velos',VeloController::class);
+Route::resource('bloc',BlocController::class);
 
