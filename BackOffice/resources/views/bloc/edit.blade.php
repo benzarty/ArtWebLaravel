@@ -10,7 +10,7 @@
           @method("PATCH")
           <input type="hidden" name="id" id="id" value="{{$bloc->id}}" id="id" />
           <label>Title</label></br>
-          <input type="text" name="Title" id="Title" value="{{$bloc->Title}}" class="form-control"></br>
+          <input type="text" name="Title" id="Title" placeholder="{{$bloc->Title}}" class="form-control"></br>
 
           <label>Description</label></br>
           <input type="text" name="Description" id="Description" value="{{$bloc->Description}}" class="form-control"></br>

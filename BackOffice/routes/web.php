@@ -21,6 +21,9 @@ use App\Http\Controllers\AssociationController;
 
 // Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
 //CRUD operations velo
+Route::get('/', function () {
+    return view('Home');
+});
 
 Route::post("AddVelo", [VeloController::class,'AddVelo']);
 Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
