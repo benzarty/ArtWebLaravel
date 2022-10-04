@@ -15,6 +15,11 @@ class VerifyCsrfToken extends Middleware
         // 'AddVelo',
         "EditVelo/2",
         "AllVelo",
-        "destroyVelo/2"
+        "destroyVelo/2",
+         // 'AddEvent',
+         "EditEvent/1",
+         "getAllEvents",
+         "destroyEvent/1"
     ];
+   
 }
