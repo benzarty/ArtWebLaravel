@@ -5,6 +5,9 @@ use App\Http\Controllers\VeloController;
 use App\Http\Controllers\BlocController;
 use App\Http\Controllers\EventController;
 
+use App\Http\Controllers\AssociationController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +35,5 @@ Route::resource('events',EventController::class);
 Route::resource('velos',VeloController::class);
 Route::resource('bloc',BlocController::class);
 
+
+Route::resource("/association",AssociationController::class);
