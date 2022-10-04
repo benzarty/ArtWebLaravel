@@ -195,6 +195,7 @@
                                     <a href="javascript:" class="d-block text-center text-light small p-2 my-1">Show all notifications</a>
                                 </div>
                             </div>
+                            
 
                             <div class="demo-navbar-messages nav-item dropdown mr-lg-3">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="#" data-toggle="dropdown">
