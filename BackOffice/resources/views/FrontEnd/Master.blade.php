@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en" class="material-style layout-fixed">
@@ -72,10 +73,10 @@
 
                     <!-- Layouts -->
                     <li class="sidenav-divider mb-1"></li>
-                  
+
                     <!-- UI elements -->
-             
-                
+
+
                     <li class="sidenav-item">
                         <a href="velos" class="sidenav-link">
                             <i class="sidenav-icon feather icon-lock"></i>
@@ -100,7 +101,7 @@
                             <div>Association</div>
                         </a>
                     </li>
-               
+
                 </ul>
             </div>
             <!-- [ Layout sidenav ] End -->
@@ -117,9 +118,9 @@
                         <span class="app-brand-text demo font-weight-normal ml-2">Empire</span>
                     </a> --}}
 
-             
 
-                
+
+
 
                     <div class="navbar-collapse collapse" id="layout-navbar-collapse">
                         <!-- Divider -->
@@ -195,7 +196,8 @@
                                     <a href="javascript:" class="d-block text-center text-light small p-2 my-1">Show all notifications</a>
                                 </div>
                             </div>
-                            
+
+
 
                             <div class="demo-navbar-messages nav-item dropdown mr-lg-3">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="#" data-toggle="dropdown">
@@ -288,9 +290,9 @@
 
 
                 <!-- [ Layout content ] Start -->
-               
+
                 <!-- [ Layout content ] Start -->
-          
+
             <!-- [ Layout container ] End -->
         </div>
         <!-- Overlay -->

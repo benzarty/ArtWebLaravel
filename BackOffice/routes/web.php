@@ -7,7 +7,7 @@ use App\Http\Controllers\EventController;
 
 use App\Http\Controllers\AssociationController;
 
-
+use App\Http\Controllers\AccessoireController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +20,19 @@ use App\Http\Controllers\AssociationController;
 */
 
 // Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
-//CRUD operations velo
+
 Route::get('/', function () {
-    return view('Home');
+    return view('welcome');
 });
+// Route::get('/byccle', function () {
+//     return view('byccle');
+// });
+Route::get('/booking', function () {
+    return view('booking');
+});
+Route::resource('velos',VeloController::class);
+Route::resource('accessoires',AccessoireController::class);
+Route::get('byccle',[\App\Http\Controllers\VeloController::class ,'index2']);
 
 Route::post("AddVelo", [VeloController::class,'AddVelo']);
 Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
