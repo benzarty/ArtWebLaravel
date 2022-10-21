@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VeloController;
-
+use App\Http\Controllers\AccessoireController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +15,17 @@ use App\Http\Controllers\VeloController;
 */
 
 // Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
-//CRUD operations velo
-// Route::post("AddVelo", [VeloController::class,'AddVelo']);
-// Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
-// Route::get("AllVelo", [VeloController::class,'getAllVelos']);
-// Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
+
+Route::get('/', function () {
+    return view('welcome');
+});
+// Route::get('/byccle', function () {
+//     return view('byccle');
+// });
+Route::get('/booking', function () {
+    return view('booking');
+});
 Route::resource('velos',VeloController::class);
+Route::resource('accessoires',AccessoireController::class);
+Route::get('byccle',[\App\Http\Controllers\VeloController::class ,'index2']);
 

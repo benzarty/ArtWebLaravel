@@ -19,7 +19,7 @@ class VeloFactory extends Factory
         return [
             'type' =>"velo electrique",
             'marque' => "toyota",
-            'description' => "Vélo à assistance électrique Moteur roue avant batterie intégrée sur porte bagage Panier Fixe 11aH 36v 70 km d'autonomie",
+            'description' => "Vélo à assistance électrique Moteur roue avant batterie intégrée ",
             'image' => "rouge",
             'couleur' => "rouge",
             'tarif' => 12,

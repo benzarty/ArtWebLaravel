@@ -53,5 +53,5 @@
         @endforeach
     </table>
 
-    {!! $velos->links() !!}
+   
     @endsection

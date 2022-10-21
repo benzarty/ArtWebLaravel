@@ -16,4 +16,8 @@ class Velo extends Model
         'couleur',
         'tarif',
     ];
+    public function accessoires()
+    {
+        return $this->belongsToMany(Accessoire::class);
+    }
 }

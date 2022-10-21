@@ -1,4 +1,4 @@
-@extends('FrontEnd.Master')
+ @extends('FrontEnd.Master')
 
 @section('content')
 <div class="row">
@@ -63,4 +63,5 @@
     </div>
 
 </form>
-@endsection
+@endsection 
+

@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="{{ route('velos.update',$velo->id) }}" method="POST">
+    <form action="{{ route('velos.update',$velo) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -31,13 +31,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Type:</strong>
-                    <input type="text" name="type" class="form-control" placeholder="Type">
+                    <input type="text" name="type" class="form-control" placeholder="Type" value="{{ old('type', $velo->type) }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>marque:</strong>
-                    <input type="text" name="marque" class="form-control" placeholder="marque">
+                    <input type="text" name="marque"  class="form-control" placeholder="marque">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

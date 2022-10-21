@@ -8,10 +8,20 @@ use App\Models\Velo;
 class VeloController extends Controller
 { public function index()
     {
-        $velos = Velo::latest()->paginate(5);
 
+        $velos = DB::table('velos')
+        ->get();
         return view('velos.index',compact('velos'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+             ->with('i', (request()->input('page', 1) - 1) * 5);
+
+
+    }
+    public function index2()
+    {
+        $velos =DB::table('velos')
+        ->get();
+         return view('byccle',compact('velos'));
+
     }
 
     /**
