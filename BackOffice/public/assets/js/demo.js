@@ -40,13 +40,15 @@
     }
   });
 
-
-  var $window = $(window);
-  var nav = $('.fixed-button');
-  $window.scroll(function() {
-      if ($window.scrollTop() >= 200) {
-          nav.addClass('active');
-      } else {
-          nav.removeClass('active');
-      }
-  });
+$('body').append('' +
+    '<div class="fixed-button active">' + '<a href="https://codedthemes.com/item/empire-bootstrap-admin-template/" target="_blank" class="btn btn-md btn-primary">' + '<i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy now' +
+    '</a> ' + '</div>' + '');
+var $window = $(window);
+var nav = $('.fixed-button');
+$window.scroll(function() {
+    if ($window.scrollTop() >= 200) {
+        nav.addClass('active');
+    } else {
+        nav.removeClass('active');
+    }
+});

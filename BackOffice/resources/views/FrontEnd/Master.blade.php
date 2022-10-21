@@ -198,6 +198,7 @@
                             </div>
 
 
+
                             <div class="demo-navbar-messages nav-item dropdown mr-lg-3">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="#" data-toggle="dropdown">
                                     <i class="feather icon-mail navbar-icon align-middle"></i>
