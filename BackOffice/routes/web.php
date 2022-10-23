@@ -21,9 +21,9 @@ use App\Http\Controllers\AccessoireController;
 
 // Route::get('/', [\App\Http\Controllers\MainController::class , 'index'] );
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 // Route::get('/byccle', function () {
 //     return view('byccle');
 // });
@@ -34,18 +34,46 @@ Route::resource('velos',VeloController::class);
 Route::resource('accessoires',AccessoireController::class);
 Route::get('byccle',[\App\Http\Controllers\VeloController::class ,'index2']);
 
-Route::post("AddVelo", [VeloController::class,'AddVelo']);
-Route::put("EditVelo/{id}", [VeloController::class,'EditVelo']);
-Route::get("AllVelo", [VeloController::class,'getAllVelos']);
-Route::delete("destroyVelo/{id}",[VeloController::class,'destroyVelo']);
-//CRUD Event
-//Route::post("AddEvent", [EventController::class,'AddEvent']);
-//Route::put("EditEvent/{id}", [EventController::class,'EditEvent']);
-//Route::get("getAllEvents", [EventController::class,'getAllEvents']);
-//Route::delete("destroyEvent/{id}",[EventController::class,'destroyEvent']);
 Route::resource('event',EventController::class);
-Route::resource('velos',VeloController::class);
+
 Route::resource('bloc',BlocController::class);
 
 
 Route::resource("/association",AssociationController::class);
+// Route::post('/upload',VeloController::class, 'storeImage')->name('image.store');
+Route::controller(VeloController::class)->group(function(){
+     Route::get('/image-upload', 'index3')->name('image.form');
+    Route::post('/upload-image', 'storeImage')->name('image.store');
+});
+
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{
+    /**
+     * Home Routes
+     */
+
+Route::get('/', function () {
+    return view('welcome');
+});
+    Route::group(['middleware' => ['guest']], function() {
+        /**
+         * Register Routes
+         */
+        Route::get('/register', 'RegisterController@show')->name('register.show');
+        Route::post('/register', 'RegisterController@register')->name('register.perform');
+
+        /**
+         * Login Routes
+         */
+        Route::get('/login', 'LoginController@show')->name('login.show');
+        Route::post('/login', 'LoginController@login')->name('login.perform');
+
+    });
+
+    Route::group(['middleware' => ['auth']], function() {
+        /**
+         * Logout Routes
+         */
+        Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+    });
+});

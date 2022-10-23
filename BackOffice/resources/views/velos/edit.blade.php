@@ -1,29 +1,37 @@
 @extends('FrontEnd.Master')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit velo</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('velos.index') }}"> Back</a>
-            </div>
-        </div>
+<div class="card">
+    <div class="card-header">edit velo </div>
+    <div class="card-body">
+        <form action="{{ route('velos.update',$velo) }}" method="POST">
+            @csrf
+            @method('PUT')
+
+          <input type="hidden" name="id"   id="id" />
+          <label>Type</label></br>
+          <input type="text" name="type" class="form-control" placeholder="Type" value="{{ old('type', $velo->type) }}"></br>
+
+          <label>Marque</label></br>
+          <input type="text" name="marque"  class="form-control" placeholder="marque"value="{{ old('marque', $velo->marque) }}"></br>
+
+          <label>Description</label></br>
+          <input type="text" name="description"  class="form-control" placeholder="description"value="{{ old('description', $velo->description) }}"></br>
+          <label>Tarif</label></br>
+          <input type="text" name="tarif" id="tarif" value="{{ old('tarif', $velo->tarif) }}" class="form-control"></br>
+          <label>image</label></br>
+          <input type="file" class="form-control" name="image" />
+
+          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+      </form>
+
     </div>
+  </div>
+@endsection
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <form action="{{ route('velos.update',$velo) }}" method="POST">
+    {{-- <form action="{{ route('velos.update',$velo) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -64,4 +72,4 @@
         </div>
 
     </form>
-@endsection
+@endsection --}}

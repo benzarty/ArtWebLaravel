@@ -114,6 +114,42 @@ class VeloController extends Controller
         return redirect()->route('velos.index')
                         ->with('success','velo deleted successfully');
     }
+    public function storeImage(Request $request)
+    {
+        // $request->validate([
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
+
+        // $imageName = time().'.'.$request->image->extension();
+
+        // // $request->image->move(public_path('images'), $imageName);
+        // $request->image->storeAs('images', $imageName);
+        // $path = $request->file('image')->store('public/images');
+
+        // /* Store $imageName name in DATABASE from HERE */
+
+        // return back()
+        //     ->with('success','You have successfully upload image.')
+        //     ->with('image',$imageName);
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+
+        $image_path = $request->file('image')->store('image', 'public');
+
+        $data = Image::create([
+            'image' => $image_path,
+        ]);
+
+        session()->flash('success', 'Image Upload successfully');
+
+        return redirect()->route('image.index');
+
+    }
+    public function index3()
+    {
+        return view('image');
+    }
 
 
 
