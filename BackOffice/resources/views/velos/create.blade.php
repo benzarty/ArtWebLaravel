@@ -1,67 +1,30 @@
  @extends('FrontEnd.Master')
-
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New velo</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('velos.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
+<div class="card">
+  <div class="card-header">velo</div>
+  <div class="card-body">
 
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+    <form action="{{ route('velos.store') }}" method="POST">
+        {!! csrf_field() !!}
+        <label>Type</label></br>
+        <input type="text" name="type" class="form-control" placeholder="Type">
 
-<form action="{{ route('velos.store') }}" method="POST">
-    @csrf
+        <label>Marque</label></br>
+        <input type="text" name="marque" class="form-control" placeholder="marque">
+        <label>Description</label></br>
+        <input type="text" name="description" id="description" class="form-control"placeholder="description"></br>
 
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Type:</strong>
-                <input type="text" name="type" class="form-control" placeholder="Type">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>marque:</strong>
-                <input type="text" name="marque" class="form-control" placeholder="marque">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>couleur:</strong>
-                <textarea class="form-control" style="height:150px" name="couleur" placeholder="couleur"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>description:</strong>
-                <textarea class="form-control" style="height:150px" name="description" placeholder="Descrpiton"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>tarif:</strong>
-                <textarea class="form-control" style="height:150px" name="tarif" placeholder="tarif"></textarea>
-            </div>
-        </div>
+        <label>couleur</label></br>
+        <input type="text" name="couleur" id="couleur" class="form-control" placeholder="couleur"></br>
+        <label>Tarif</label></br>
+        <input type="text" name="tarif" id="tarif" class="form-control"placeholder="tarif"></br>
+        <label>image</label></br>
+        <input type="file" class="form-control" name="image" />
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
     </div>
+    </form>
 
-</form>
-@endsection 
-
+  </div>
+</div>
+@endsection

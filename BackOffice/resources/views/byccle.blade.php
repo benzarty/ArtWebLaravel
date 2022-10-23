@@ -28,11 +28,12 @@
 <div class=" col-lg-4 col-md-6">
 <div class="bicycle-grid mb-xl-30">
 <div class="bicycle-grid-wrapper bicycle-grid bx-wrapper">
-<div class="image-sec animate-img"> <a href="#"> <img src="{{$velo->image}}" class="full-width" alt="img"> </a> </div>
+<div class="image-sec animate-img"> <a href="#">  <img src="images/{{ Session::get('image') }}">
+     </a> </div>
 <div class="bicycle-grid-caption padding-20 bg-custom-white p-relative">
-<h4 class="title fs-16"><a href="#" class="text-custom-black">{{$velo->type}}<small class="text-light-dark">Per Day</small></a></h4>
+<h4 class="title fs-16"><a href="#" class="text-custom-black">{{$velo->type}}<small class="text-light-dark"></small></a></h4>
 <span class="price"><small>{{$velo->tarif}} $</small></span>
-<div class="action"> <a class="btn-second btn-small" href="{{$velo->description}}">View</a> <a class="btn-first btn-submit" href="#">Book</a> </div>
+<div class="action"> <a class="btn-second btn-small" href="#">View</a> <a class="btn-first btn-submit" href="#">Book</a> </div>
 </div>
 </div>
 </div>

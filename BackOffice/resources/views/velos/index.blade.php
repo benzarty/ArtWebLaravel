@@ -26,6 +26,7 @@
             <th>couleur</th>
             <th>descrpiton</th>
             <th>tarif</th>
+            <th>image </th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($velos as $velo)
@@ -36,6 +37,7 @@
             <td>{{ $velo->couleur }}</td>
             <td>{{ $velo->description }}</td>
             <td>{{ $velo->tarif}}</td>
+            <td>{{$velo->image}}</td>
             <td>
                 <form action="{{ route('velos.destroy',$velo->id) }}" method="POST">
 
@@ -53,5 +55,5 @@
         @endforeach
     </table>
 
-   
+
     @endsection

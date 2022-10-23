@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">Contactus Page</div>
     <div class="card-body">
-        
+
         <form action="{{ url('event/' .$event->id) }}" method="post">
           {!! csrf_field() !!}
           @method("PATCH")
@@ -24,7 +24,7 @@
 
           <input type="submit" value="Update" class="btn btn-success"></br>
       </form>
-    
+
     </div>
   </div>
 @endsection
