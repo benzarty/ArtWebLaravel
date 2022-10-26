@@ -20,4 +20,5 @@ class Velo extends Model
     {
         return $this->belongsToMany(Accessoire::class);
     }
+
 }

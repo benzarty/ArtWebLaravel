@@ -24,6 +24,10 @@
                 <strong>Description:</strong>
                 {{ $velo->descrpiton }}
             </div>
+            <script>
+            $velos = DB::table('velos')
+            ->leftJoin('accessoires_velos', 'accessoires_velos.velo_id', '=', 'veloss.id')
+            </script>
         </div>
     </div>
 @endsection

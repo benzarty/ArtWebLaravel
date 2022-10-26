@@ -28,7 +28,7 @@
 <div class=" col-lg-4 col-md-6">
 <div class="bicycle-grid mb-xl-30">
 <div class="bicycle-grid-wrapper bicycle-grid bx-wrapper">
-<div class="image-sec animate-img"> <a href="#">  <img src="images/{{ Session::get('image') }}">
+<div class="image-sec animate-img"> <a href="#">  <img src="assets/images/{{$velo->image}}">
      </a> </div>
 <div class="bicycle-grid-caption padding-20 bg-custom-white p-relative">
 <h4 class="title fs-16"><a href="#" class="text-custom-black">{{$velo->type}}<small class="text-light-dark"></small></a></h4>

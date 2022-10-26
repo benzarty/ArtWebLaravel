@@ -43,7 +43,9 @@ Route::resource("/association",AssociationController::class);
 // Route::post('/upload',VeloController::class, 'storeImage')->name('image.store');
 Route::controller(VeloController::class)->group(function(){
      Route::get('/image-upload', 'index3')->name('image.form');
-    Route::post('/upload-image', 'storeImage')->name('image.store');
+     Route::post('/upload-image', 'storeImage')->name('image.store');
+    //  Route::post('/add_velo', [\App\Http\Controllers\VeloController::class ,'addVelo'])->name('velo.add');
+    // addVelo
 });
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()

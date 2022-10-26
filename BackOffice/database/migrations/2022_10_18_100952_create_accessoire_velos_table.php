@@ -14,9 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('accessoire_velos', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('velo_id')->constrained()->onDelete('cascade');
-            $table->foreignId('accessoire_id')->constrained()->onDelete('cascade');
+            $table->increments('id');
+            // $table->foreignId('velo_id')->constrained()->onDelete('cascade');
+            // $table->foreignId('accessoire_id')->constrained()->onDelete('cascade');
+
+            $table->integer('velo_id')->unsigned()->nullable($value = true);
+            $table->foreign('velo_id')->references('id')->on('velos')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('accessoire_id')->unsigned()->nullable($value = true);
+            $table->foreign('accessoire_id')->references('id')->on('accessoires')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
